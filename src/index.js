@@ -7,7 +7,6 @@ import ErrorPage from "./pages/ErrorPage";
 import VideoDetail from "./pages/VideoDetail";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -21,6 +20,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
