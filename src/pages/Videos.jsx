@@ -3,19 +3,19 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import VideoCard from "../components/VideoCard";
 
-import Youtube, { search } from "../api/Youtube";
-import FackYoutube from "../api/fakeYoutube";
+import { useYoutubeApi } from "../context/YoutubeApiContext";
 export default function Videos() {
   const { keyword } = useParams();
+  const { youtube } = useYoutubeApi();
   const {
     isLoading,
     error,
     data: videos,
-  } = useQuery(["search", keyword], () => {
+  } = useQuery(
+    ["search", keyword],
+    () => youtube.search(keyword)
     // const youtube = new FackYoutube();
-    const youtube = new Youtube();
-    return youtube.search(keyword);
-  });
+  );
   return (
     <>
       <div>{keyword ? `🔍search` : `🔥`}</div>
