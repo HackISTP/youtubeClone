@@ -11,11 +11,9 @@ export default function Videos() {
     isLoading,
     error,
     data: videos,
-  } = useQuery(
-    ["search", keyword],
-    () => youtube.search(keyword)
-    // const youtube = new FackYoutube();
-  );
+  } = useQuery(["search", keyword], () => youtube.search(keyword), {
+    staleTime: 1000 * 60 * 1,
+  });
   return (
     <>
       {isLoading && <p>isLoading...</p>}
