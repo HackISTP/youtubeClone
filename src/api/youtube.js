@@ -8,6 +8,7 @@ export default class Youtube {
     return keyword ? this.#searchByKeyword(keyword) : this.#mostPopular();
   }
   async #searchByKeyword(keyword) {
+    //#이 붙으면 외부 인스턴스에서 접근이 불가능하다.
     return this.apiClient
       .search({
         params: {
