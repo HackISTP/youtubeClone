@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { createContext } from "react";
 import YoutubeClient from "../api/YoutubeClient";
-import Youtube from "../api/Youtube";
+import Youtube from "../api/youtube";
 
 export const YoutubeApiContext = createContext();
 
